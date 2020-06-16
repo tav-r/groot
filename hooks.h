@@ -10,7 +10,7 @@ int (*real_chdir)(const char *);
 struct dirent *(*real_readdir)(DIR *);
 
 /*
- * Foreach hooked function, initialize the original.
+ * Resolve symbol by given enum value
  */
 void
 lookup_sym(int index)

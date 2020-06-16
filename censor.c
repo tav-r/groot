@@ -3,6 +3,9 @@
 
 extern const char *HIDDEN_FILES[];
 
+/*
+ * Check if given filepath is hidden (configuration is done in config.h)
+ */
 bool
 ishidden(const char *filename)
 {

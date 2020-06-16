@@ -58,11 +58,13 @@ static void onload() {
     memset(STORED_LD_PRELOAD, 0, len);
     strncpy(STORED_LD_PRELOAD, env, len);
 
+    // LD_PRELOAD is unset when module gets loaded to hide itself
     unsetenv("LD_PRELOAD");
 }
 
 /* Restore LD_PRELOAD when shared object gets loaded. */
 static void onunload() {
+    // LD_PRELOAD is set again when module gets unloaded
     setenv("LD_PRELOAD", STORED_LD_PRELOAD, 1);
     free(STORED_LD_PRELOAD);
 }

